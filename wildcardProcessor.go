@@ -1,11 +1,12 @@
 package wildcard_processor
 
 import (
+	"path/filepath"
+	"strings"
+
 	"github.com/flashmob/go-guerrilla/backends"
 	"github.com/flashmob/go-guerrilla/mail"
 	"github.com/flashmob/go-guerrilla/response"
-	"path/filepath"
-	"strings"
 )
 
 type WildcardConfig struct {
