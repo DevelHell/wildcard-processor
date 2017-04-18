@@ -1,8 +1,8 @@
 package wildcard_processor
 
 import (
-	"testing"
 	"strings"
+	"testing"
 )
 
 func TestAllowsRcpt(t *testing.T) {
@@ -17,7 +17,7 @@ func TestAllowsRcpt(t *testing.T) {
 	}
 
 	c1 := WildcardConfig{WildcardHosts: strings.Join(allowedHosts, ",")}
-	w1 := newWildcardProcessor(&c1)
+	w1 := newWildcard(&c1)
 
 	testTable := map[string]bool{
 		"spam4.me":                true,
@@ -38,7 +38,7 @@ func TestAllowsRcpt(t *testing.T) {
 
 	// only wildcard - should match anything
 	c2 := WildcardConfig{WildcardHosts: "*"}
-	w2 := newWildcardProcessor(&c2)
+	w2 := newWildcard(&c2)
 
 	if !w2.allowsRcpt("match.me") {
 		t.Error("match.me: expected true but got false")
