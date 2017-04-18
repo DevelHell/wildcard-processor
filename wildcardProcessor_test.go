@@ -1,6 +1,9 @@
 package wildcard_processor
 
-import "testing"
+import (
+	"testing"
+	"strings"
+)
 
 func TestAllowsRcpt(t *testing.T) {
 	allowedHosts := []string{
@@ -13,7 +16,7 @@ func TestAllowsRcpt(t *testing.T) {
 		"multiple*wild*cards.*",
 	}
 
-	c1 := WildcardConfig{WildcardHosts: allowedHosts}
+	c1 := WildcardConfig{WildcardHosts: strings.Join(allowedHosts, ",")}
 	w1 := newWildcardProcessor(&c1)
 
 	testTable := map[string]bool{
@@ -34,7 +37,7 @@ func TestAllowsRcpt(t *testing.T) {
 	}
 
 	// only wildcard - should match anything
-	c2 := WildcardConfig{WildcardHosts: []string{"*"}}
+	c2 := WildcardConfig{WildcardHosts: "*"}
 	w2 := newWildcardProcessor(&c2)
 
 	if !w2.allowsRcpt("match.me") {
