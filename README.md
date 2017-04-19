@@ -1,4 +1,7 @@
 # wildcard-processor
+
+[![Build Status](https://circleci.com/gh/DevelHell/wildcard-processor.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/DevelHell/wildcard-processor) [![Coverage Status](https://coveralls.io/repos/github/DevelHell/wildcard-processor/badge.svg?branch=master)](https://coveralls.io/github/DevelHell/wildcard-processor?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/DevelHell/wildcard-processor)](https://goreportcard.com/report/github.com/DevelHell/wildcard-processor)
+
 Wildcard-processor adds wildcard support for recipient hosts validation for 
 [go-guerilla](https://github.com/flashmob/go-guerrilla) package
 
